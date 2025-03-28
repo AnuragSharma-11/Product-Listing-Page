@@ -16,46 +16,50 @@ if (!isset($_SESSION['admin'])) {
     <style>
         body {
             background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .dashboard-container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
+            max-width: 500px;
+            padding: 30px;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             text-align: center;
         }
         .dashboard-container h2 {
-            margin-bottom: 20px;
-            color: #333;
+            margin-bottom: 25px;
+            color: #007bff;
+            font-weight: bold;
         }
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
         .btn {
-            padding: 12px;
-            font-size: 16px;
-            transition: all 0.3s ease-in-out;
+            padding: 14px;
+            font-size: 17px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.1s ease-in-out;
         }
         .btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="dashboard-container">
-            <h2>Admin Dashboard</h2>
-            <div class="btn-container">
-                <a href="categories.php" class="btn btn-primary">Manage Categories</a>
-                <a href="subcategories.php" class="btn btn-secondary">Manage Subcategories</a>
-                <a href="child-categories.php" class="btn btn-success">Manage Child Categories</a>
-                <a href="products.php" class="btn btn-warning">Manage Products</a>
-                <a href="logout.php" class="btn btn-danger">Logout</a>
-            </div>
+    <div class="dashboard-container">
+        <h2>Admin Dashboard</h2>
+        <div class="btn-container">
+            <a href="categories.php" class="btn btn-primary">Manage Categories</a>
+            <a href="subcategories.php" class="btn btn-secondary">Manage Subcategories</a>
+            <a href="child-categories.php" class="btn btn-success">Manage Child Categories</a>
+            <a href="products.php" class="btn btn-warning">Manage Products</a>
+            <a href="logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
 </body>
