@@ -91,7 +91,7 @@ $product = mysqli_fetch_assoc($result);
             <p><?php echo nl2br(htmlspecialchars($product['description'])); ?></p>
             <h3 class="text-success">₹<?php echo number_format($product['price'], 2); ?></h3>
             <a href="#" class="btn btn-primary">Buy Now</a>
-            <a href="products.php" class="btn btn-secondary">Back to Products</a>
+            <a href="child-category.php" class="btn btn-secondary">Back to Products</a>
         </div>
     </div>
 
