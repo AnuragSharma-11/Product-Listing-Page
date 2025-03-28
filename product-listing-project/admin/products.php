@@ -48,7 +48,7 @@ $subcategoryResult = mysqli_query($conn, $subcategoryQuery);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         .product-card {
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -64,8 +64,48 @@ $subcategoryResult = mysqli_query($conn, $subcategoryQuery);
         .product-card img {
             width: 100%;
             height: 150px;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 5px;
+            background-color: #f8f8f8; 
+        }
+    </style> -->
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+        }
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            background: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+        .filter-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-custom {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
         }
     </style>
     <script>
@@ -116,7 +156,7 @@ $subcategoryResult = mysqli_query($conn, $subcategoryQuery);
                         <img src="../images/<?php echo $row['image']; ?>" 
                              alt="Product Image" 
                              onerror="this.onerror=null; this.src='no-image.png';">
-                        <h5 class="mt-2"><?php echo $row['name']; ?></h5>
+                        <h4 class="mt-2"><?php echo $row['name']; ?></h4>
                         <p><?php echo $row['description']; ?></p>
                         <p><strong>Price:</strong> ₹<?php echo $row['price']; ?></p>
                         <p><strong>Category:</strong> <?php echo $row['category_name']; ?></p>
