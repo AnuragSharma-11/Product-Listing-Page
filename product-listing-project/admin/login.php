@@ -1,7 +1,7 @@
 <?php
 include '../config/db.php';
-session_start();
 
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -28,47 +28,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #1E3C72, #2A5298);
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #fff;
         }
         .login-box {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
             width: 100%;
-            max-width: 350px;
+            max-width: 400px;
         }
         .form-control {
             background: rgba(255, 255, 255, 0.2);
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: #fff;
+            border-radius: 8px;
         }
         .form-control::placeholder {
             color: #ddd;
         }
         .btn-primary {
-            background: #1E90FF;
+            background: linear-gradient(45deg, #ff7eb3, #ff4f7b);
             border: none;
             transition: 0.3s;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 126, 179, 0.5);
         }
         .btn-primary:hover {
-            background: #4682B4;
+            background: linear-gradient(45deg, #ff4f7b, #ff245b);
         }
         .error-msg {
             color: #ff4d4d;
             margin-top: 10px;
         }
+        h3 {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="login-box">
-        <h3 class="text-white">Admin Login</h3>
+        <h3>Admin Login</h3>
         <form method="post">
             <div class="mb-3">
                 <input type="text" name="username" class="form-control" placeholder="Username" required>
