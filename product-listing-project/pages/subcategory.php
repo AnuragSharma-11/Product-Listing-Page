@@ -18,13 +18,22 @@ $result = mysqli_query($conn, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .card {
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            background: linear-gradient(135deg, #ffffff, #f2f2f2);
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
             text-align: center;
             padding: 20px;
         }
@@ -45,10 +54,8 @@ $result = mysqli_query($conn, $sql);
     </style>
 </head>
 <body>
-
     <div class="container mt-4">
         <h2 class="text-center mb-4">Child Categories</h2>
-        
         <div class="row">
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
@@ -61,7 +68,6 @@ $result = mysqli_query($conn, $sql);
             ?>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
